@@ -1,3 +1,5 @@
+-- Conky config for MPD info , shows: playlist, scrollable title, timebar, volume, number of song and albums in the playlist 
+-- It's Located on the left bottom corner , colors are selected for my theme, change them as you please
 conky.config = {
 -- WINDOW
 	own_window = true,
@@ -7,7 +9,6 @@ conky.config = {
 	own_window_colour = '#000000',
 	own_window_class = 'Conky',
 	own_window_title = 'Mabox Conky MPD',
-
     gap_x = 15,
 	gap_y = 15,
 	minimum_width = '200',
@@ -75,3 +76,4 @@ ${font Noto Sans Mono CJK JP:size=9:bold}${color2}$mpd_album
 ${mpd_bar 3,120}
 ${color}${scroll 20 2${font Noto Sans Mono CJK JP:size=9}$mpd_title$font
 ]];
+--I usually listen to J-rock so I script have CJK fonts , you can change them if you would like
