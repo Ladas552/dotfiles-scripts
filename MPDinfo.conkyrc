@@ -1,4 +1,4 @@
--- Conky config for MPD info , shows: playlist, scrollable title, timebar, volume, number of song and albums in the playlist 
+-- Conky config for MPD info , shows: playlist, scrollable title, timebar, volume, number of song and albums in the database 
 -- It's Located on the left bottom corner , colors are selected for my theme, change them as you please
 conky.config = {
 -- WINDOW
