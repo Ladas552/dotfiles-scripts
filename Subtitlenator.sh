@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#Merge many/multple/a lot of video streams with respected one subtitle file format .ass and create folder for output
 mkdir Subbed_"$(basename "$PWD")"
 
 for i in *.mkv
