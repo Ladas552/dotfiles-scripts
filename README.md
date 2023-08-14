@@ -7,3 +7,6 @@ Here are descriptions of my stuff:
 - MPDinfo.conkyrc : need conky, mpd, mpc : to work
   - Square like conky config to show MPD info about Songs Album, Title, Timebar, Volume of MPD and how many Albums and Songs is now in your database. It can statter at times, I don't know hot to fix it, tried everything on the web to fix it but nothing works.
   - You might want to change to colors and fonts. Colors are kinda too dark for most themes. And Fonts are ugly because I needed readable CJK fonts
+- Musnow.sh : need ffmpeg, fish, mpd, mpc : to work
+  - It gets the purl from mp3 file, if downloaded from yt-dlp it is a url to the video
+  - It assumes the MPd database is located in ~/Music directory and that script is running in fish shell, because of (command) function. May rewrite to work with Bash in the future
