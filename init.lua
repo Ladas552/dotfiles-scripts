@@ -1,7 +1,20 @@
 require("core.remap")
 require("core.lazy")
+require"telescope".load_extension("bibtex")
+-- Enable true color
+
+local ccc = require("ccc")
+local mapping = ccc.mapping
+
+ccc.setup({
+	highlighter = {
+		auto_enable = true,
+	},
+})
 -- Config!!!
 local opt = vim.opt
+
+opt.termguicolors = true
 
 opt.nu = true
 opt.relativenumber = true
