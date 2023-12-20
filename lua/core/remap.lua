@@ -16,4 +16,7 @@ keymap.set("n", "<leader>nl", "<cmd>Neorg workspace life<CR>", { desc = "Go to L
 
 keymap.set("n", "<leader>nw", "<cmd>Neorg workspace work<CR>", { desc = "Go to WORK notes" })
 
-keymap.set("n", "<leader>nn", "<cmd>Neorg index<CR>", { desc = "Make a general note" })
+keymap.set("n", "<leader>nn", "<cmd>Neorg workspace journal<CR>", { desc = "Get to Journal Hub" })
+
+keymap.set("n", "<leader>jt", "<cmd>Neorg journal today<CR>", { desc = "Make todays note" })
+keymap.set("n", "<leader>jT", "<cmd>Neorg journal tomorrow<CR>", { desc = "Make todays note" })

@@ -185,10 +185,18 @@ require("lazy").setup({
       require("neorg").setup {
         load = {
           ["core.defaults"] = {},
-          ["core.concealer"] = {},
-          ["core.completion"] = {
+          ["core.concealer"] = {
             config = {
-              engine = "nvim-cmp",
+              icon_preset = "diamond",
+            },
+          },
+          ["core.summary"] = {},
+          ["core.esupports.metagen"] = { config = { timezone = "implicit-local", type = "empty" } },
+          ["core.completion"] = { config = { engine = "nvim-cmp", name = "[Norg]" } },
+          ["core.keybinds"] = {
+            config = {
+              default_keybinds = true,
+              neorg_leader = "<Leader><Leader>",
             },
           },
           ["core.dirman"] = {
@@ -197,6 +205,7 @@ require("lazy").setup({
                 general = "~/Documents/Norg/",
                 life = "~/Documents/Norg/Life/",
                 work = "~/Documents/Norg/Study/",
+                journal = "~/Documents/Norg/Journal/",
               },
               default_workspace = "general",
             },
@@ -312,7 +321,7 @@ require("lazy").setup({
         theme = 'doom',
         shortcut_type = 'number',
         hide = {
-          statusline = false,
+          statusline = true,
         },
         config = {
           header = {
@@ -322,7 +331,6 @@ require("lazy").setup({
             [[  |      (   |  (   |  (   | \__ \    ) |   ) |  __/  ]],
             [[ _____| \__,_| \__,_| \__,_| ____/ ____/ ____/ _____| ]],
             [[                                                      ]],
-
           }, --your header
           center = {
             { action = "Telescope oldfiles",                                       desc = " Recent files",       icon = "󰥔 ", key = "rr" },
