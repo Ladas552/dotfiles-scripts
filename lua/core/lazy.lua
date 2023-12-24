@@ -22,6 +22,7 @@ require("lazy").setup({
   },
   {  "nvim-tree/nvim-tree.lua",
     dependencies = { "nvim-tree/nvim-web-devicons" },
+    event = 'VeryLazy',
     config = function()
       local nvimtree = require("nvim-tree")
 
@@ -92,7 +93,7 @@ require("lazy").setup({
   },
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    event = { "InsertEnter" },
     dependencies = {
       "hrsh7th/cmp-buffer", -- source for text in buffer
       "hrsh7th/cmp-path", -- source for file system paths
@@ -181,6 +182,8 @@ require("lazy").setup({
     "nvim-neorg/neorg",
     build = ":Neorg sync-parsers",
     dependencies = { "nvim-lua/plenary.nvim" },
+   -- event = "VeryLazy",
+    event = 'VeryLazy',
     config = function()
       require("neorg").setup {
         load = {
@@ -271,6 +274,7 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     branch = "0.1.x",
+    event = 'VeryLazy',
     dependencies = {
       "nvim-lua/plenary.nvim",
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -310,8 +314,25 @@ require("lazy").setup({
   --   dependencies = {'nvim-telescope/telescope.nvim'}
   -- },
   {
-    "uga-rosa/ccc.nvim"
+    "uga-rosa/ccc.nvim",
+    event = { "BufReadPre" },
+    config = function()
+      local ccc = require("ccc")
+      ccc.setup {
+      highlighter = {
+        auto_enable = true,
+        },
+      }
+      end
   },
+--  {
+--    "stevearc/dressing.nvim",
+--    config = function()
+--      require("dressing").setup{
+--
+--      }
+--    end,
+--  },
   {
     'nvimdev/dashboard-nvim',
     event = 'VimEnter',
@@ -333,11 +354,12 @@ require("lazy").setup({
             [[                                                      ]],
           }, --your header
           center = {
-            { action = "Telescope oldfiles",                                       desc = " Recent files",       icon = "󰥔 ", key = "rr" },
-            { action = "ene | startinsert",                                        desc = " New file",           icon = " ", key = "nn" },
+            { action = "Telescope oldfiles",                                       desc = " Recent files",       icon = "󰥔 ",  key = "rr" },
+            { action = "ene | startinsert",                                        desc = " New file",           icon = " ",  key = "nn" },
             { action = "Neorg workspace life",                                     desc = " Neorg Life",         icon = "󰠮 ",  key = "nl" },
-            { action = "Neorg workspace work",                                     desc = " Neorg Work",         icon = " ", key = "nw" },
-            { action = "Lazy",                                                     desc = " Lazy",               icon = "󰒲 ", key = "ll" },
+            { action = "Neorg workspace work",                                     desc = " Neorg Work",         icon = " ",  key = "nw" },
+            { action = "Neorg workspace journal",                                  desc = " Neorg Journal",      icon = "󰛓",   key = "jj" },
+            { action = "Lazy",                                                     desc = " Lazy",               icon = "󰒲 ",  key = "ll" },
             { action = 'qa',                                                       desc = " Quit",               icon = "󰩈 ",  key = "qq" },
           },
           footer = {"Just Do Something Already!"},
@@ -348,6 +370,7 @@ require("lazy").setup({
   },
   {
     "karb94/neoscroll.nvim",
+    event = { "BufReadPre" },
     config = function ()
       require('neoscroll').setup {}
     end
